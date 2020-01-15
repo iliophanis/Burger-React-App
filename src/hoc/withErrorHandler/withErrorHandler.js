@@ -1,0 +1,1 @@
+const withErrorHandler =(Wrappded)
