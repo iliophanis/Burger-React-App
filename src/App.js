@@ -8,12 +8,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Switch>
-          <Layout>
+        <Layout>
+          <Switch>
             <Route exact path="/" component={BurgerBuilder} />
-            <Route exact path="/checkout" component={Checkout} />
-          </Layout>
-        </Switch>
+            <Route path="/checkout" component={Checkout} />
+          </Switch>
+        </Layout>
       </div>
     );
   }
