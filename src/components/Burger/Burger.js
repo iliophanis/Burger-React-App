@@ -1,7 +1,7 @@
 import React from "react";
 import "./Burger.css";
 import BurgerIngredient from "./BurgerIngredient/Burgeringredient";
-const burger = props => {
+const burger = (props) => {
   let transformedIngredients = Object.keys(props.ingredients)
     .map(igKey => {
       //igKey took the array string like salad...
