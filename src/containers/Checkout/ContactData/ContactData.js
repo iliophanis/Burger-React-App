@@ -10,36 +10,36 @@ class ContactData extends Component {
     email: "",
     address: {
       street: "",
-      postalCode: ""
+      postalCode: "",
     },
-    loading: false
+    loading: false,
   };
 
-  orderHandler = event => {
+  orderHandler = (event) => {
     event.preventDefault();
     alert("You continue");
     this.setState({ loading: true });
     const order = {
       ingredients: this.props.ingredients,
-      price: this.state.price,
+      price: this.props.price,
       customer: {
         name: "Ilias Gravvanis",
         address: {
           street: "Pergamou",
           zipCode: "41335",
-          country: "Greece"
+          country: "Greece",
         },
-        email: "iliophanis@gmail.com"
+        email: "iliophanis@gmail.com",
       },
-      deliveryMethod: "fastest"
+      deliveryMethod: "fastest",
     };
     axios
       .post("/orders.json", order)
-      .then(response => {
+      .then((response) => {
         this.setState({ loading: false });
         this.props.history.push("/");
       })
-      .catch(error => {
+      .catch((error) => {
         this.setState({ loading: false });
       });
   };

@@ -2,11 +2,11 @@ import React, { Component } from "react";
 import { Route } from "react-router-dom";
 import ContactData from "./ContactData/ContactData";
 import CheckoutSummary from "../../components/Order/CheckoutSummary/CheckoutSummary";
-
+import "./ContactData/ContactData.css";
 class Checkout extends Component {
   state = {
     ingredients: null,
-    price: 0
+    totalPrice: 0,
   };
 
   componentWillMount() {
@@ -33,22 +33,26 @@ class Checkout extends Component {
 
   render() {
     return (
-      <div>
-        <CheckoutSummary
-          ingredients={this.state.ingredients}
-          onCheckoutCancelled={this.checkoutCancelledHandler}
-          checkoutContinued={this.checkoutContinueHandler}
-        />
-        <Route
-          path={this.props.match.path + "/contact-data"}
-          render={props => (
-            <ContactData
-              ingredients={this.state.ingredients}
-              price={this.state.totalPrice}
-              {...props}
-            />
-          )}
-        />
+      <div className="container">
+        <div className="flex">
+          <CheckoutSummary
+            ingredients={this.state.ingredients}
+            onCheckoutCancelled={this.checkoutCancelledHandler}
+            checkoutContinued={this.checkoutContinueHandler}
+          />
+        </div>
+        <div className="flex">
+          <Route
+            path={this.props.match.path + "/contact-data"}
+            render={(props) => (
+              <ContactData
+                ingredients={this.state.ingredients}
+                price={this.state.totalPrice}
+                {...props}
+              />
+            )}
+          />
+        </div>
       </div>
     );
   }

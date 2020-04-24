@@ -16,7 +16,9 @@
     background-color: white;
 }
 
-@media (min-width: 500px) { /*less than 500px*/
+@media (min-width: 500px) {
+
+    /*more than 500px*/
     .DrawerToggle {
         display: none;
     }

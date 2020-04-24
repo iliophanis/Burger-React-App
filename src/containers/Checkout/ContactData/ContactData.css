@@ -2,15 +2,29 @@
     margin: 20px auto;
     width: 80%;
     text-align: center;
+    box-shadow: 0 2px 3px #ccc;
+    border: 1px solid #eee;
+    padding: 10px;
+    box-sizing: border-box;
 }
-
 
 .Input {
     display: block;
 }
 
-@media(min-width:600px) {
+@media (min-width: 600px) {
     .ContactData {
         width: 500px;
     }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex {
+
+    margin-bottom: 10px;
 }
